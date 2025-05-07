@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services - Digital Digitizers</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f9f9f9;
+      }
+      header,
+      footer {
+        background: #111;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: auto;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        color: #333;
+      }
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .card {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+      .card h3 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        color: #007bff;
+      }
+      .card p {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 0.5rem;
+      }
+      .card i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #007bff;
+      }
+      .no-services {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #777;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "common/header.html" %}
+    <div class="container">
+      <h2>Explore Our Services</h2>
+      <div class="card-container">
+        {% for service in services %}
+        <div class="card">
+          <i class="fas fa-cogs"></i>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+        {% empty %}
+        <p class="no-services">No services available at the moment.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

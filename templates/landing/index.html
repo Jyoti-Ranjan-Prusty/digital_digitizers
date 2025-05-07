@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Digitizers</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      header,
+      footer {
+        background: #111;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .hero {
+        background: #f4f4f4;
+        padding: 2rem;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .hero button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s, transform 0.3s;
+      }
+      .hero button:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+      }
+      .services,
+      .about {
+        padding: 2rem;
+        text-align: center;
+      }
+      .services .card,
+      .about .card {
+        display: inline-block;
+        width: 30%;
+        margin: 1%;
+        background: #eee;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .services .card:hover,
+      .about .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .card i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: #007bff;
+      }
+      .team-cards {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .team-cards .card {
+        width: 30%;
+        background: #eee;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .team-cards .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .social-icons a {
+        color: #fff;
+        margin: 0 10px;
+        font-size: 1.2rem;
+        transition: color 0.3s, transform 0.3s;
+      }
+      .social-icons a:hover {
+        color: #007bff;
+        transform: scale(1.2);
+      }
+      footer {
+        border-top: 2px solid #444;
+        margin-top: 2rem;
+      }
+      @media (max-width: 768px) {
+        .services .card,
+        .about .card,
+        .team-cards .card {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    {% include "common/header.html" %}
+
+    <section class="hero" id="hero">
+      <h1>Your Digital Growth Partner</h1>
+      <p>Grow your business with our expert marketing solutions</p>
+      <button onclick="window.location.href='{% url 'service' %}'">Get Started</button>
+    </section>
+
+    <section class="services" id="services">
+      <h2>Our Services</h2>
+      <div class="card">
+        <i class="fas fa-search"></i>
+        <h3>SEO</h3>
+        <p>Improve your search rankings</p>
+      </div>
+      <div class="card">
+        <i class="fab fa-google"></i>
+        <h3>Google Ads</h3>
+        <p>Reach more customers instantly</p>
+      </div>
+      <div class="card">
+        <i class="fab fa-facebook"></i>
+        <h3>Meta Ads</h3>
+        <p>Advertise on Facebook & Instagram</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>Meet Our Team</h2>
+      <div class="team-cards">
+        <div class="card">
+          <h4>Alice Smith</h4>
+          <p>SEO Specialist</p>
+        </div>
+        <div class="card">
+          <h4>John Doe</h4>
+          <p>Ad Campaign Manager</p>
+        </div>
+        <div class="card">
+          <h4>Emma Davis</h4>
+          <p>Social Media Expert</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Digital Digitizers</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>
